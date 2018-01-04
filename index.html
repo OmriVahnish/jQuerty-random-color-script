@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery demo</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<h1>Press spacebar !!</h1>
+<p>to change background-color</p>
+    
+<script>
+    $(function(){
+        
+        $('body').keyup(function(e){
+            if(e.keyCode == 32){
+                // user has pressed space
+                var colorR = Math.floor((Math.random() * 256));
+                var colorG = Math.floor((Math.random() * 256));
+                var colorB = Math.floor((Math.random() * 256));
+                //select 3 random numbers - rgb numbers.
+                $(this).css("background-color", "rgb(" + colorR + "," + colorG + "," +    colorB + ")");
+            }
+        });
+    });
+</script>
+ 
+</body>
+</html>
